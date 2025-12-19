@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Nexus - Radio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-wrap">
+    <img src="https://i.postimg.cc/FH0d1w8M/crea-un-logotipo-para-una-radio-electron-L-o-EOu-FVS6Crj-Yj-DHl7I1Q-UQ0S9aab-SKWCl-LHz9VAPWw.png" 
+         alt="MD Nexus Logo">
+
+    <span class="brand">
+        MD <span class="nexus">Nexus</span>
+    </span>
+</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <!-- VIDEO DE VIMEO FULL WIDTH -->
+        <div class="hero-video-container">
+    <iframe 
+        class="hero-video"
+        src="https://player.vimeo.com/video/1145400928?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0"
+        frameborder="0"
+        allow="autoplay; fullscreen">
+    </iframe>
+</div>
+
+
+        <div class="hero-content" data-aos="fade-up">
+            <h1>TU FIEL<br>COMPAÑÍA</h1>
+            <p>La mejor música electrónica sin parar</p>
+            <a href="#" class="cta-button" onclick="playRadio(event)">
+    <span>ESCUCHAR EN VIVO</span>
+</a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" data-aos="fade-up">
+                <h3>MD NEXUS</h3>
+                <p>Tu compañía perfecta las 24 horas. La mejor selección de música electrónica sin interrupciones.</p>
+                <div class="social-links"></div>
+            </div>
+
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                <h3>ENLACES</h3>
+                <p>Inicio<br>Contacto<br>Anúnciate</p>
+            </div>
+
+            <div id="contacto" class="footer-section" data-aos="fade-up" data-aos-delay="200">
+    <h3>CONTACTO</h3>
+    <p>Email: matias.martin.delgado@gmail.com<br>Tel:+54 3804-261374<br>Streaming 24/7<br>La Rioja Argentina</p>
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MD Nexus Radio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <audio id="radioPlayer" preload="none">
+    <source src="https://uk16freenew.listen2myradio.com/live.mp3?typeportmount=s1_35586_stream_763572515" type="audio/mpeg">
+</audio>
+<script>
+function playRadio(e) {
+    e.preventDefault();
+    const player = document.getElementById("radioPlayer");
+    player.play();
+}
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

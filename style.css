@@ -1,0 +1,280 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #050505;
+    color: #fff;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-wrap img {
+    height: 80px;
+    width: auto;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;          /* igual al de la imagen */
+    font-size: 22px;           /* ajustalo si querés más grande */
+    letter-spacing: 2px;       /* super importante */
+    text-transform: uppercase; /* coincide con la imagen */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.brand .md {
+    color: #ffffff;
+}
+
+.brand .nexus {
+    color: #14ff72;            /* el verde tuyo */
+}
+
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #14ff72;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* FULL ALTO REAL */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* VIDEO DE FONDO (ESTE ES EL BLOQUE BUENO) */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120vw;
+    height: 120vh; /* No lo tocamos */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInVideo 2.5s ease forwards;
+    pointer-events: none;      /* evita auto-resize */
+    min-width: 100%;           /* evita que se achique */
+    min-height: 100%;          /* evita que se achique */
+}
+
+/* FADE-IN KEYFRAME */
+@keyframes fadeInVideo {
+    from { opacity: 0; }
+    to { opacity: 0.30; }
+}
+
+/* OVERLAY OSCURO */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 2;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 0 20px #0aff68;
+}
+
+.hero-content p {
+    margin-top: 15px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* CTA BUTTON */
+.cta-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 35px;
+    font-size: 18px;
+    border-radius: 40px;
+    background: #14ff72;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #14ff72;
+}
+
+.cta-button:hover {
+    background: #0ce463;
+    box-shadow: 0 0 25px #14ff72;
+}
+
+/* VIDEO SHOWCASE (AÚN SIN USAR) */
+.video-showcase {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-container {
+    width: 85%;
+}
+
+.showcase-video {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* FOOTER */
+footer {
+    background: #000000;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #14ff72;
+}
+
+.footer-section p {
+    opacity: 0.85;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #14ff72;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    nav {
+        padding: 15px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+/* ===== AJUSTES SOLO PARA CELULAR (NAV) ===== */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;   /* ← ESTA ES LA CLAVE */
+        align-items: center;
+        padding: 12px 16px;
+        gap: 8px;
+    }
+
+    .logo-wrap {
+        gap: 6px;
+    }
+
+    .logo-wrap img {
+        height: 42px;
+    }
+
+    .brand {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* === CENTRADO FINO MD NEXUS === */
+    .logo-wrap {
+        justify-content: center;
+        flex: 1;
+    }
+
+    .brand {
+        justify-content: center;
+        text-align: center;
+    }
+
+}
